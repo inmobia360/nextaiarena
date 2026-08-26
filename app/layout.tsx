@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import "./globals.css";
+import ThemeToggle from "./components/theme-toggle";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
@@ -18,26 +19,26 @@ export const metadata: Metadata = {
     siteName: "NextAI Arena",
     locale: "es_ES",
     type: "website",
-    images: ["/brand/Logo_NextAI_Arena_light.png"],
+    images: ["/brand/Logo_NextAI_Arena_web.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "NextAI Arena",
     description: "Descubre, compara y prueba herramientas de IA.",
-    images: ["/brand/Logo_NextAI_Arena_light.png"],
+    images: ["/brand/Logo_NextAI_Arena_web.png"],
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body>
         <header className="site-header">
           <div className="shell header-inner">
             <a className="brand" href="#top" aria-label="NextAI Arena, inicio">
               <Image
                 className="brand-logo brand-logo-light"
-                src="/brand/Logo_NextAI_Arena_light.png"
+                src="/brand/Logo_NextAI_Arena_web.png"
                 alt="NextAI Arena"
                 width={420}
                 height={150}
@@ -45,7 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               />
               <Image
                 className="brand-logo brand-logo-dark"
-                src="/brand/Logo_NextAI_Arena_dark.png"
+                src="/brand/Logo_NextAI_Arena_web_dark.png"
                 alt="NextAI Arena"
                 width={420}
                 height={150}
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <a href="#como-funciona">Cómo funciona</a>
               <a href="#temporada">Founding Season</a>
             </nav>
+            <ThemeToggle />
             <a className="button button-small button-outline" href="#participa">
               Participa
             </a>

@@ -60,7 +60,7 @@ export default function Home() {
           <div className="orb orb-two" />
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
-          <Image src="/brand/Favicon_NextAI_Arena_transparent.png" alt="" width={420} height={340} priority />
+          <Image src="/brand/Favicon_NextAI_Arena_web.png" alt="" width={420} height={340} priority />
         </div>
       </section>
 
