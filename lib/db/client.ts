@@ -4,5 +4,5 @@ import { drizzle } from "drizzle-orm/postgres-js";
 const connectionString = process.env.DATABASE_URL;
 
 export const db = connectionString
-  ? drizzle(postgres(connectionString, { prepare: false }))
+  ? drizzle(postgres(connectionString, { prepare: false, ssl: "require" }))
   : null;

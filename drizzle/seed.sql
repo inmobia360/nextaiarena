@@ -26,7 +26,7 @@ on conflict (slug) do update set name = excluded.name;
 -- Candidatas iniciales. Permanecen en draft hasta completar revisión editorial.
 insert into public.tools (slug, name, vendor_name, description, official_url, primary_category_id, audiences, difficulty, languages, status, editorial_status)
 select seed.slug, seed.name, seed.vendor_name, seed.description, seed.official_url,
-  (select id from public.categories where slug = seed.category_slug), seed.audiences::audience_segment[], seed.difficulty, seed.languages, 'draft', 'pending_review'
+  (select id from public.categories where slug = seed.category_slug), seed.audiences::audience_segment[], seed.difficulty, seed.languages::text[], 'draft', 'pending_review'
 from (values
   ('notion-ai', 'Notion AI', 'Notion', 'Asistente para trabajar con documentos, notas y conocimiento de equipo.', 'https://www.notion.so/product/ai', 'productividad-conocimiento', '{b2b,b2c}', 'media', '{es,en}'),
   ('claude', 'Claude', 'Anthropic', 'Asistente conversacional para redactar, analizar e investigar.', 'https://claude.ai/', 'productividad-conocimiento', '{b2b,b2c}', 'baja', '{es,en}'),
