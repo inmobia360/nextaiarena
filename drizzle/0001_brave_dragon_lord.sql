@@ -1,0 +1,1 @@
+ALTER TABLE "tools" ADD COLUMN "editorial_status" text DEFAULT 'pending_review' NOT NULL;

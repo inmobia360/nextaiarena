@@ -22,3 +22,31 @@ values
   ('whatsapp', 'WhatsApp'),
   ('api', 'API')
 on conflict (slug) do update set name = excluded.name;
+
+-- Candidatas iniciales. Permanecen en draft hasta completar revisión editorial.
+insert into public.tools (slug, name, vendor_name, description, official_url, primary_category_id, audiences, difficulty, languages, status, editorial_status)
+select seed.slug, seed.name, seed.vendor_name, seed.description, seed.official_url,
+  (select id from public.categories where slug = seed.category_slug), seed.audiences::audience_segment[], seed.difficulty, seed.languages, 'draft', 'pending_review'
+from (values
+  ('notion-ai', 'Notion AI', 'Notion', 'Asistente para trabajar con documentos, notas y conocimiento de equipo.', 'https://www.notion.so/product/ai', 'productividad-conocimiento', '{b2b,b2c}', 'media', '{es,en}'),
+  ('claude', 'Claude', 'Anthropic', 'Asistente conversacional para redactar, analizar e investigar.', 'https://claude.ai/', 'productividad-conocimiento', '{b2b,b2c}', 'baja', '{es,en}'),
+  ('chatgpt', 'ChatGPT', 'OpenAI', 'Asistente conversacional para tareas de escritura, análisis y aprendizaje.', 'https://chatgpt.com/', 'productividad-conocimiento', '{b2b,b2c}', 'baja', '{es,en}'),
+  ('canva', 'Canva', 'Canva', 'Herramienta visual para crear piezas de contenido y presentaciones.', 'https://www.canva.com/', 'contenido-marketing-creatividad', '{b2b,b2c}', 'baja', '{es,en}'),
+  ('midjourney', 'Midjourney', 'Midjourney', 'Herramienta de generación de imágenes a partir de instrucciones.', 'https://www.midjourney.com/', 'contenido-marketing-creatividad', '{b2b,b2c}', 'media', '{en}'),
+  ('runway', 'Runway', 'Runway', 'Herramienta creativa para generación y edición de vídeo.', 'https://runwayml.com/', 'contenido-marketing-creatividad', '{b2b,b2c}', 'media', '{en}'),
+  ('make', 'Make', 'Make', 'Plataforma visual para conectar aplicaciones y automatizar procesos.', 'https://www.make.com/', 'automatizacion-agentes-integraciones', '{b2b}', 'media', '{es,en}'),
+  ('n8n', 'n8n', 'n8n', 'Automatización de workflows con integraciones y control técnico.', 'https://n8n.io/', 'automatizacion-agentes-integraciones', '{b2b}', 'alta', '{en}'),
+  ('zapier', 'Zapier', 'Zapier', 'Automatización de tareas entre aplicaciones y servicios online.', 'https://zapier.com/', 'automatizacion-agentes-integraciones', '{b2b,b2c}', 'baja', '{es,en}'),
+  ('cursor', 'Cursor', 'Anysphere', 'Editor de código con funciones de asistencia para desarrollar software.', 'https://www.cursor.com/', 'desarrollo-datos-tecnologia', '{b2b,b2c}', 'media', '{en}')
+) as seed(slug, name, vendor_name, description, official_url, category_slug, audiences, difficulty, languages)
+on conflict (slug) do update set
+  name = excluded.name,
+  vendor_name = excluded.vendor_name,
+  description = excluded.description,
+  official_url = excluded.official_url,
+  primary_category_id = excluded.primary_category_id,
+  audiences = excluded.audiences,
+  difficulty = excluded.difficulty,
+  languages = excluded.languages,
+  status = 'draft',
+  editorial_status = 'pending_review';

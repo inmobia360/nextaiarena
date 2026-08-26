@@ -8,6 +8,13 @@
       "when": 1787741904450,
       "tag": "0000_jittery_puff_adder",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1787742852464,
+      "tag": "0001_brave_dragon_lord",
+      "breakpoints": true
     }
   ]
 }

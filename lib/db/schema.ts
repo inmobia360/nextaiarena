@@ -21,7 +21,7 @@ export const tools = pgTable("tools", {
   id: uuid("id").defaultRandom().primaryKey(), slug: text("slug").notNull(), name: text("name").notNull(), vendorName: text("vendor_name").notNull(),
   description: text("description").notNull(), officialUrl: text("official_url").notNull(), logoUrl: text("logo_url"), primaryCategoryId: uuid("primary_category_id").references(() => categories.id),
   audiences: audienceSegment("audiences").array().notNull().default([]), difficulty: text("difficulty"), languages: text("languages").array().notNull().default([]),
-  status: toolStatus("status").notNull().default("draft"), lastVerifiedAt: timestamp("last_verified_at", { withTimezone: true }), createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(), updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+  status: toolStatus("status").notNull().default("draft"), editorialStatus: text("editorial_status").notNull().default("pending_review"), lastVerifiedAt: timestamp("last_verified_at", { withTimezone: true }), createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(), updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
 }, (table) => ({ slugIdx: uniqueIndex("tools_slug_idx").on(table.slug) }));
 
 export const toolPlans = pgTable("tool_plans", {
