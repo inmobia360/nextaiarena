@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import "./globals.css";
 import ThemeToggle from "./components/theme-toggle";
 
@@ -54,7 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               />
             </a>
             <nav className="main-nav" aria-label="Navegación principal">
-              <a href="/herramientas">Explorar</a>
+              <Link href="/herramientas">Explorar</Link>
               <a href="#categorias">Categorías</a>
               <a href="#como-funciona">Cómo funciona</a>
               <a href="#temporada">Founding Season</a>

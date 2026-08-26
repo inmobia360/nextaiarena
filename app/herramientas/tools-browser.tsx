@@ -53,7 +53,7 @@ export default function ToolsBrowser() {
       {status === "loading" && <p className="catalog-message" role="status">Preparando la arena…</p>}
       {status === "error" && <div className="catalog-message catalog-message-highlight"><p className="eyebrow">Catálogo en preparación</p><h2>Estamos conectando las primeras herramientas.</h2><p>La búsqueda estará disponible en cuanto se active el catálogo del MVP.</p><a className="text-link" href="#participa">Avísame cuando esté listo <span>→</span></a></div>}
       {status === "empty" && <div className="catalog-message"><h2>No hemos encontrado coincidencias.</h2><p>Prueba otra necesidad, categoría o audiencia.</p></div>}
-      {status === "ready" && <div className="tool-results">{tools.map((tool) => <article className="tool-card" key={tool.id}><p className="category-kicker">{tool.category ?? "Sin categoría"}</p><h2>{tool.name}</h2><p className="tool-vendor">{tool.vendorName}</p><p>{tool.description}</p><a className="card-link" href={tool.officialUrl} target="_blank" rel="noreferrer">Visitar herramienta <span>↗</span></a></article>)}</div>}
+      {status === "ready" && <div className="tool-results">{tools.map((tool) => <article className="tool-card" key={tool.id}><p className="category-kicker">{tool.category ?? "Sin categoría"}</p><h2>{tool.name}</h2><p className="tool-vendor">{tool.vendorName}</p><p>{tool.description}</p><a className="card-link" href={`/herramientas/${tool.slug}`}>Ver ficha <span>↗</span></a></article>)}</div>}
     </section>
   );
 }
