@@ -39,6 +39,8 @@ Antes de habilitar usuarios reales:
 
 El repositorio ya incluye el proxy de renovación de sesión en `proxy.ts`. Si faltan las variables de Supabase, se desactiva de forma segura y la aplicación continúa funcionando en modo local.
 
+Las políticas iniciales de Row Level Security están en `supabase/rls.sql`. El callback de autenticación PKCE está en `app/auth/callback/route.ts`.
+
 ## 5. Comprobación
 
 ```bash
