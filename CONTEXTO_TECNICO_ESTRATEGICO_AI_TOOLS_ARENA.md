@@ -279,18 +279,17 @@ La plataforma debe distinguir entre «declarado por el proveedor», «revisado e
 
 ### 7.2 Categorías iniciales
 
-- Automatización empresarial.
-- Atención al cliente.
-- Ventas y seguimiento.
-- Marketing y redes sociales.
-- Texto, imagen y vídeo.
-- Voz y transcripción.
-- Documentos y correo.
-- Datos y análisis.
-- Programación.
-- Agentes y chatbots.
-- Integraciones Make y n8n.
-- Herramientas para inmobiliarias.
+El MVP comenzará con cinco categorías principales, organizadas por necesidad y resultado:
+
+- Productividad y conocimiento.
+- Contenido, marketing y creatividad.
+- Automatización, agentes e integraciones.
+- Ventas, atención al cliente y operaciones.
+- Desarrollo, datos y tecnología.
+
+La primera Founding Season priorizará Productividad y conocimiento; Contenido, marketing y creatividad; y Automatización, agentes e integraciones. Se utilizarán etiquetas y casos de uso transversales para Educación, E-commerce, Inmobiliario, Recursos Humanos, Finanzas, Salud, Documentos, Correo, Voz, Transcripción, Make, n8n, APIs y otros sectores o tecnologías.
+
+No se crearán nuevas categorías principales hasta disponer de señales de demanda, catálogo suficiente, participación y retención que justifiquen la ampliación.
 
 Las categorías deben priorizar problemas y resultados, con una categoría principal por herramienta y categorías secundarias limitadas.
 

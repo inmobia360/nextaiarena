@@ -15,6 +15,8 @@ The product starts in Spain as a validation market and is designed for internati
 
 The shared core includes discovery, search, filters, comparisons, profiles, community votes, reviews, seasons, editorial content, saved items, and alerts. B2B experiences may add implementation, demos, integrations, security, budget, and specialist leads. B2C experiences may emphasize ease of use, price, device, language, and personal use cases.
 
+The MVP taxonomy has five confirmed primary categories: Productividad y conocimiento; Contenido, marketing y creatividad; Automatización, agentes e integraciones; Ventas, atención al cliente y operaciones; and Desarrollo, datos y tecnología. The first Founding Season prioritizes the first three. Sectors and narrower use cases should begin as tags rather than additional top-level categories.
+
 Organic community ranking is never sold. Paid placements are separate inventory and must be labelled as sponsored. Verification is limited and must not be presented as comprehensive certification.
 
 ## Delivery context

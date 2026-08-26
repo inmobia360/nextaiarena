@@ -74,6 +74,7 @@ Preserve these rules unless the user explicitly changes them:
 
 - Spain is the initial validation market, not the permanent product boundary.
 - The platform supports B2B, B2C, and professional users through a shared core with differentiated experiences.
+- The confirmed MVP taxonomy has five primary categories: Productividad y conocimiento; Contenido, marketing y creatividad; Automatización, agentes e integraciones; Ventas, atención al cliente y operaciones; and Desarrollo, datos y tecnología. The first Founding Season prioritizes the first three; narrower sectors begin as tags.
 - Organic community ranking must remain separate from paid sponsorship and editorial selection.
 - Sponsored placements must be unmistakably labelled, attributable, time-bounded, and auditable.
 - Verification means limited identity or information checking; it is not a blanket legal, technical, safety, or regulatory certification.

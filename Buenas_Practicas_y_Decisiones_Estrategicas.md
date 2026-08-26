@@ -19,6 +19,20 @@ España será el mercado inicial de validación. El lanzamiento español debe se
 
 España es, por tanto, el mercado piloto, no el límite geográfico ni estratégico del producto.
 
+## 2.1 Categorías iniciales confirmadas
+
+El MVP comenzará con cinco categorías principales, organizadas por necesidades y resultados, no por tecnología:
+
+1. Productividad y conocimiento.
+2. Contenido, marketing y creatividad.
+3. Automatización, agentes e integraciones.
+4. Ventas, atención al cliente y operaciones.
+5. Desarrollo, datos y tecnología.
+
+La primera Founding Season priorizará las tres primeras categorías, con aproximadamente 20–30 herramientas distribuidas entre ellas. Educación, e-commerce, inmobiliario, recursos humanos, finanzas, salud y otros sectores se manejarán inicialmente como etiquetas y casos de uso, no como categorías principales independientes.
+
+No se deben crear más categorías principales hasta observar búsquedas, participación, calidad de catálogo y señales de retención suficientes.
+
 ## 2. Alcance B2B y B2C
 
 La plataforma no debe definirse exclusivamente como B2B. Debe admitir dos grandes líneas de uso:
