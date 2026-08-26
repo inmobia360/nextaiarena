@@ -134,6 +134,18 @@ h1 span, h2 em { color: var(--violet); font-style: normal; }
 .plan-card h3 { margin: 0 0 20px; font-size: 16px; font-weight: 600; }
 .plan-card p { margin: 0 0 8px; font-size: 20px; font-weight: 600; }
 .plan-card span, .tool-empty { color: var(--muted); font-size: 12px; }
+.compare-page { min-height: 75vh; }
+.compare-browser { padding-bottom: 130px; }
+.compare-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.compare-toolbar .eyebrow { margin: 0; }
+.compare-table { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--line); }
+.compare-row { min-width: 760px; display: grid; grid-template-columns: 150px repeat(var(--compare-columns), minmax(190px, 1fr)); gap: 1px; background: var(--line); }
+.compare-row > * { min-height: 74px; display: flex; align-items: center; margin: 0; padding: 18px; background: var(--white); }
+.compare-row > span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.compare-row > p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.compare-row-label > h2 { display: grid; align-content: center; gap: 5px; color: var(--ink); font-size: 18px; font-weight: 600; }
+.compare-row-label small { color: var(--muted); font-size: 11px; font-weight: 400; }
+.compare-row-action .card-link { color: var(--ink); font-size: 12px; font-weight: 600; }
 html[data-theme="dark"] .catalog-filters, html[data-theme="dark"] .catalog-message, html[data-theme="dark"] .tool-card { background: var(--white); }
 .theme-toggle { border: 1px solid var(--line); border-radius: 999px; padding: 9px 12px; display: inline-flex; align-items: center; gap: 7px; color: var(--muted); background: transparent; cursor: pointer; font: inherit; font-size: 11px; font-weight: 600; }
 .theme-toggle:hover { color: var(--ink); border-color: var(--blue); }

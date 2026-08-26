@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import CompareButton from "@/app/components/compare-button";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db/client";
 import { categories, toolPlans, tools } from "@/lib/db/schema";
@@ -19,7 +20,7 @@ export default async function ToolDetailPage({ params }: { params: Promise<{ slu
         <h1>{tool.name}</h1>
         <p className="tool-detail-vendor">{tool.vendorName}</p>
         <p className="tool-detail-description">{tool.description}</p>
-        <div className="tool-detail-actions"><a className="button button-primary" href={tool.officialUrl} target="_blank" rel="noreferrer">Visitar herramienta <span>↗</span></a><a className="button button-outline" href="#comparar">Añadir a comparar</a></div>
+        <div className="tool-detail-actions"><a className="button button-primary" href={tool.officialUrl} target="_blank" rel="noreferrer">Visitar herramienta <span>↗</span></a><CompareButton slug={slug} /><Link className="text-link" href="/comparar">Ver comparación <span>→</span></Link></div>
         <div className="tool-facts"><div><span>Audiencia</span><strong>{tool.audiences.join(" · ") || "Sin clasificar"}</strong></div><div><span>Dificultad</span><strong>{tool.difficulty ?? "Sin información"}</strong></div><div><span>Idiomas</span><strong>{tool.languages.join(" · ") || "Sin información"}</strong></div><div><span>Verificado</span><strong>{tool.lastVerifiedAt ? new Date(tool.lastVerifiedAt).toLocaleDateString("es-ES") : "Pendiente"}</strong></div></div>
         <section className="tool-plans" aria-labelledby="planes-title"><p className="eyebrow">Información comercial</p><h2 id="planes-title">Planes y prueba</h2>{plans.length ? <div className="plan-grid">{plans.map((plan) => <article className="plan-card" key={plan.name}><h3>{plan.name}</h3><p>{plan.amount ? `${plan.amount} ${plan.currency}` : "Consultar precio"}</p><span>{plan.hasFreeTrial ? "Incluye prueba" : plan.billingPeriod ?? "Sin periodicidad indicada"}</span></article>)}</div> : <p className="tool-empty">Todavía no hay información de planes verificada.</p>}</section>
       </section>

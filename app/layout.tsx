@@ -56,6 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </a>
             <nav className="main-nav" aria-label="Navegación principal">
               <Link href="/herramientas">Explorar</Link>
+              <Link href="/comparar">Comparar</Link>
               <a href="#categorias">Categorías</a>
               <a href="#como-funciona">Cómo funciona</a>
               <a href="#temporada">Founding Season</a>
