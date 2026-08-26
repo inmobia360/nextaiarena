@@ -1,0 +1,4 @@
+interface:
+  display_name: "NextAI Arena Orchestrator"
+  short_description: "Dirige el desarrollo multiagente seguro de NextAI Arena"
+  default_prompt: "Usa $nextai-arena-orchestrator para analizar, planificar, delegar, auditar y ejecutar esta tarea dentro del proyecto NextAI Arena."

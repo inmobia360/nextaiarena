@@ -1,0 +1,25 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python/runtime noise
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local QA/render outputs
+qa_render/
+qa_brand/
+*.log
+
+# OS/editor noise
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
