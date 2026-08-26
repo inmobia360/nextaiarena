@@ -1,8 +1,12 @@
 :root { --ink: #0e1637; --muted: #647092; --line: #dfe5f2; --paper: #f7f9fe; --white: #fff; --blue: #1767f6; --cyan: #14c7e8; --violet: #8d36f4; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html[data-theme="dark"] { color-scheme: dark; }
+html[data-theme="light"] { color-scheme: light; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; }
 a { color: inherit; text-decoration: none; }
+.skip-link { position: fixed; top: 10px; left: 10px; z-index: 20; padding: 10px 14px; border-radius: 8px; color: var(--ink); background: var(--white); transform: translateY(-160%); transition: transform .2s ease; }
+.skip-link:focus-visible { transform: translateY(0); }
 .shell { width: 100%; max-width: none; margin: 0; padding-inline: clamp(20px, 5vw, 80px); }
 .site-header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 90%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent); backdrop-filter: blur(18px); }
 .header-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }

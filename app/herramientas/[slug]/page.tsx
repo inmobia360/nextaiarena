@@ -1,14 +1,14 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import CompareButton from "@/app/components/compare-button";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { db } from "@/lib/db/client";
 import { categories, toolPlans, tools } from "@/lib/db/schema";
 
 export default async function ToolDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   if (!db) notFound();
   const { slug } = await params;
-  const [tool] = await db.select({ id: tools.id, name: tools.name, vendorName: tools.vendorName, description: tools.description, officialUrl: tools.officialUrl, category: categories.name, audiences: tools.audiences, difficulty: tools.difficulty, languages: tools.languages, lastVerifiedAt: tools.lastVerifiedAt }).from(tools).leftJoin(categories, eq(tools.primaryCategoryId, categories.id)).where(eq(tools.slug, slug)).limit(1);
+  const [tool] = await db.select({ id: tools.id, name: tools.name, vendorName: tools.vendorName, description: tools.description, officialUrl: tools.officialUrl, category: categories.name, audiences: tools.audiences, difficulty: tools.difficulty, languages: tools.languages, lastVerifiedAt: tools.lastVerifiedAt }).from(tools).leftJoin(categories, eq(tools.primaryCategoryId, categories.id)).where(and(eq(tools.slug, slug), eq(tools.status, "published"))).limit(1);
   if (!tool) notFound();
   const plans = await db.select({ name: toolPlans.name, pricingType: toolPlans.pricingType, amount: toolPlans.amount, currency: toolPlans.currency, billingPeriod: toolPlans.billingPeriod, hasFreeTrial: toolPlans.hasFreeTrial }).from(toolPlans).where(eq(toolPlans.toolId, tool.id));
 

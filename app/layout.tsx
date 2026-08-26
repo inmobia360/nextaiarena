@@ -34,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es" suppressHydrationWarning>
       <body>
+        <a className="skip-link" href="#main-content">Saltar al contenido</a>
         <header className="site-header">
           <div className="shell header-inner">
             <a className="brand" href="#top" aria-label="NextAI Arena, inicio">
@@ -67,7 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </a>
           </div>
         </header>
-        {children}
+        <div id="main-content">{children}</div>
         <footer className="site-footer">
           <div className="shell footer-inner">
             <span>© 2026 NextAI Arena</span>
