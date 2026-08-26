@@ -37,6 +37,8 @@ Antes de habilitar usuarios reales:
 - Reservar moderación, temporadas y edición para roles autorizados del servidor.
 - Configurar autenticación SSR con cookies y flujo PKCE.
 
+El repositorio ya incluye el proxy de renovación de sesión en `proxy.ts`. Si faltan las variables de Supabase, se desactiva de forma segura y la aplicación continúa funcionando en modo local.
+
 ## 5. Comprobación
 
 ```bash
